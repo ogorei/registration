@@ -17,6 +17,7 @@ export const RootNavigation = () => {
     },[])
   return (
     <NavigationContainer>
+        {/* initialRoutename allow me to specify the first screen to display */}
         <Stack.Navigator initialRouteName="Welcome">
             <Stack.Screen name="Welcome" component={Welcome} />
             <Stack.Screen name="FlexBox" component={FlexBox} />

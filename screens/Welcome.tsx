@@ -4,6 +4,7 @@ import tw from 'tailwind-react-native-classnames';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types/types';
 import { Button } from 'react-native-elements';
+import Input from '../components/Input';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'FlexBox'>;
 
@@ -20,6 +21,7 @@ export const Welcome:VFC<Props> = ({navigation}) => {
     <View style={tw`text-2xl font-bold bg-blue-200 flex-1 justify-center items-center`}>
         <ImageBackground source={image} style={tw`flex-auto w-full justify-center items-center`}>
             <Text style={tw`flex justify-center text-white items-center text-2xl`}>ようこそNEKOの世界へ</Text>
+            <Input />
             <View style={tw`mt-8`}>
                 <Button
                 title="ギャラリーへ行く"

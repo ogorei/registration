@@ -9,7 +9,9 @@ const Input = () => {
             <Formik
                 initialValues={{ email: '', password:'' }}
                 onSubmit={(values)=> {
-                    console.log(22,values)
+                    // UpbondSDK(value)
+                    // console.log(22,values)
+
                 }}
             >
             {(props) => (

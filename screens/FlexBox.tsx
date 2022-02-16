@@ -4,6 +4,7 @@ import tw from 'tailwind-react-native-classnames';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types/types';
 import { Button } from 'react-native-elements';
+import Input from '../components/Input';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'FlexBox'>;
 // functional componentの型を適応するためVFCを使ってtype Propsのジェネリックpropsを定義する。そしてnavigationの機能を使えるようになる。

@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlexBox } from '../screens/FlexBox';
 import { Welcome } from '../screens/Welcome';
 import { ReduxTKScreen } from '../screens/ReduxTKScreen';
-
+import { LoginScreen } from '../screens/LoginScreen';
 export const RootNavigation = () => {
     const Stack = createNativeStackNavigator();
 
@@ -22,7 +22,7 @@ export const RootNavigation = () => {
             <Stack.Screen name="Welcome" component={Welcome} />
             <Stack.Screen name="FlexBox" component={FlexBox} />
             <Stack.Screen name="Redux" component={ReduxTKScreen} />
-
+            <Stack.Screen name="LoginScreen" component={LoginScreen} />
         </Stack.Navigator>
   </NavigationContainer>
   );

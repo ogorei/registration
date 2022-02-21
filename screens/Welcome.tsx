@@ -12,7 +12,6 @@ export const Welcome:VFC<Props> = ({navigation}) => {
     const image = { uri: 'https://www.watabe-wedding.co.jp/company/en/assets/images/sp/l-index-mainVisual.jpg' };
 
     useEffect(()=>{
-        console.log('HELLO');
         return ()=>{
             console.log('unmounted HELLO');
         }

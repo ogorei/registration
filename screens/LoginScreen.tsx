@@ -10,16 +10,13 @@ import Input from '../components/Input'
 type Props = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
 export const LoginScreen:VFC<Props> = ({navigation}) => {
+
     useEffect(()=>{
-        console.log('LoginScreen');
-        return ()=>{
-            console.log('unmounted loginscreen');
-        }
-    },[])
+       },[])
 
   return (
     <View style={tw`text-2xl font-bold p-4 bg-green-300 flex-1 justify-center items-center`}>
-      <Text>Login within the native application</Text>
+      <Text>ネイティブでログイン(OPEN ID CONNECT用の画面)</Text>
       <Input />
     </View>
   );

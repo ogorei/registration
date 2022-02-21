@@ -17,10 +17,10 @@ const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 export default function Login() {
     const [request, response, promptAsync] = AuthSession.useAuthRequest(
         {
-        redirectUri,
-        clientId: auth0ClientId,
-        scopes: ['profile'],
-        prompt: AuthSession.Prompt.Login,
+            redirectUri,
+            clientId: auth0ClientId,
+            scopes: ['profile'],
+            prompt: AuthSession.Prompt.Login,
         },
         { authorizationEndpoint}
     );

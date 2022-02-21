@@ -11,30 +11,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'FlexBox'>;
 
 export const FlexBox:VFC<Props> = ({navigation}) => {
 
-//     const catImages = "https://thecatapi.com/v1/images?api_key=1fbce736-a167-4b37-9e2e-3ed144944392"
-    
-//     // Implementation code where T is the returned data shape
-//     function callcats<T>(url: string): Promise<T> {
-//     return fetch(catImages)
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error(response.statusText)
-//         }
-//         return response.json<T>()
-//       })
-//   }
-  
-//   // Consumer
-//     callcats<{ title: string; message: string }>('v1/posts/1')
-//         .then(({ title, message }) => {
-//         console.log(title, message)
-//         })
-//         .catch(error => {
-//         /* show error message */
-//         })
-
-    
-
     useEffect(()=> {
         console.log('reina');
         return ()=>{

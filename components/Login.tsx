@@ -1,12 +1,11 @@
 import { Platform, Button, View, Text, TouchableOpacity } from "react-native";
 import { useEffect, useState } from "react";
 import * as AuthSession from "expo-auth-session";
-// import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session';
 import tw from "tailwind-react-native-classnames";
 import * as React from "react";
 import * as WebBrowser from "expo-web-browser";
 import jwtDecode from "jwt-decode";
-import Crypto from "crypto";
+import { randomSHA256Async } from "../utils/randomSHA256sync"
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -18,6 +17,8 @@ const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 
 export default function Login() {
   const [name, setName] = useState(null);
+  const [sha, setSha] = useState('');
+  
   const [request, response, promptAsync] = AuthSession.useAuthRequest(
     {
       redirectUri,
@@ -27,16 +28,17 @@ export default function Login() {
       prompt: AuthSession.Prompt.Login,
       extraParams: {
         // nonce needed, just use random value
-        nonce: Crypto.randomBytes(32).toString("hex"),
+        nonce: sha,
       },
     },
     { authorizationEndpoint }
   );
-
+  // console.log(1111, request);
+  // console.log(2222, response);
+  // console.log(3333, promptAsync);
+  
   useEffect(() => {
     //type of response: cancel only (rightnow)
-    console.log(11, request);
-    console.log(22, response);
     if (response) {
       if (response.type === "success") {
         console.log(response.params);
@@ -49,6 +51,13 @@ export default function Login() {
       }
     }
   }, [response]);
+
+  useEffect(() => {
+    (async () => {
+      const randomValue = await randomSHA256Async();
+      setSha(randomValue);
+    })();
+  }, [])
 
   return (
     <View>

@@ -12,7 +12,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'FlexBox'>;
 export const FlexBox:VFC<Props> = ({navigation}) => {
 
     useEffect(()=> {
-        console.log('reina');
         return ()=>{
             console.log('unmounted');
         }

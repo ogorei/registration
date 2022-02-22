@@ -10,7 +10,6 @@ export const RootNavigation = () => {
     const Stack = createNativeStackNavigator();
 
     useEffect(()=>{
-        console.log('reina');
         return ()=>{
             console.log('unmounted');
         }
